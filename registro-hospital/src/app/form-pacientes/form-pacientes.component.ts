@@ -19,6 +19,7 @@ export class FormPacientesComponent {
     fecha_ingreso: new Date()
   };
 
+  pacientes: Paciente[] = [];
   constructor(private pacienteService: PacientesService) {}
 
   submitForm() {
@@ -30,8 +31,4 @@ export class FormPacientesComponent {
     //   },
     // )
   }
-
-  listaPacientes?: Paciente[];
-
-  onInit()
 }

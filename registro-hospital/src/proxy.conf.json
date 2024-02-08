@@ -1,6 +1,13 @@
 {
+<<<<<<< HEAD
 	"/api": {
 		"target": "http://localhost:3000",
 		"secure": false
 	}
+=======
+  "/api": {
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+>>>>>>> 51d93e7e32428f0455b9989fb19bbe6d8cc5a979
 }
