@@ -5,6 +5,7 @@ const router = Router();
 
 
 router.post('/register', async (req, res) => {
+	res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
 	try {
 		const nuevoUser = new userSchema(req.body);
 		await nuevoUser.save().then(() => console.log('Se guardo')).catch(err => console.error(err.message));

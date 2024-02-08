@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PacientesService } from '../services/pacientes.service';
-import { PacienteModule } from '../models/paciente/paciente.module';
+import { Paciente } from '../models/paciente';
 
 @Component({
   selector: 'app-form-pacientes',
@@ -9,7 +9,7 @@ import { PacienteModule } from '../models/paciente/paciente.module';
   styleUrls: ['./form-pacientes.component.css']
 })
 export class FormPacientesComponent {
-  paciente: PacienteModule = {
+  paciente: Paciente = {
     nombre: '',
     apellido: '',
     fecha_nacimiento: new Date(),
@@ -30,4 +30,8 @@ export class FormPacientesComponent {
     //   },
     // )
   }
+
+  listaPacientes?: Paciente[];
+
+  onInit()
 }
