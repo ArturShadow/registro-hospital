@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PacientesService } from '../services/pacientes.service';
-import { PacienteModule } from '../models/paciente/paciente.module';
+import { Paciente } from '../models/paciente';
 
 @Component({
   selector: 'app-form-pacientes',
@@ -9,7 +9,7 @@ import { PacienteModule } from '../models/paciente/paciente.module';
   styleUrls: ['./form-pacientes.component.css']
 })
 export class FormPacientesComponent {
-  paciente: PacienteModule = {
+  paciente: Paciente = {
     nombre: '',
     apellido: '',
     fecha_nacimiento: new Date(),
@@ -19,6 +19,7 @@ export class FormPacientesComponent {
     fecha_ingreso: new Date()
   };
 
+  pacientes: Paciente[] = [];
   constructor(private pacienteService: PacientesService) {}
 
   submitForm() {
@@ -29,5 +30,21 @@ export class FormPacientesComponent {
     //     console.log('datos enviados', res);
     //   },
     // )
+  }
+
+   ngOnInit(): void {
+    this.obtenerPacientes();
+  }
+
+  obtenerPacientes() {
+    this.pacienteService.obtenerPacientes().subscribe(
+      pacientes => {
+        this.pacientes = pacientes;
+        console.log('Pacientes obtenidos:', this.pacientes);
+      },
+      error => {
+        console.error('Error al obtener los pacientes:', error);
+      }
+    );
   }
 }
