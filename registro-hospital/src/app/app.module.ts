@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormPacientesComponent } from './form-pacientes/form-pacientes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
+import { AvisoPrivacidadComponent } from './aviso-privacidad/aviso-privacidad.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormPacientesComponent,
-    HeaderComponent
+    HeaderComponent,
+    AvisoPrivacidadComponent
   ],
   imports: [
     BrowserModule,

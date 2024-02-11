@@ -25,10 +25,10 @@ export class FormPacientesComponent {
   submitForm() {
     console.log(this.paciente);
     this.pacienteService.guardarPaciente(this.paciente);
-    // this.pacienteService.guardarPaciente(this.paciente).subscribe(
-    //   res => {
-    //     console.log('datos enviados', res);
-    //   },
-    // )
+    this.pacienteService.guardarPaciente(this.paciente).subscribe(
+      res => {
+        console.log('datos enviados', res);
+      },
+    )
   }
 }
